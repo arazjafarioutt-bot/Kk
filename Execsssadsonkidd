@@ -1,0 +1,74 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+
+designed using localmaze gui creator
+]=]
+
+-- Instances: 7 | Scripts: 0 | Modules: 0 | Tags: 0
+local LMG2L = {};
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui
+LMG2L["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+LMG2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame
+LMG2L["Frame_2"] = Instance.new("Frame", LMG2L["ScreenGui_1"]);
+LMG2L["Frame_2"]["BorderSizePixel"] = 0;
+LMG2L["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+LMG2L["Frame_2"]["Size"] = UDim2.new(0.53666, 0, 0.44863, 0);
+LMG2L["Frame_2"]["Position"] = UDim2.new(0, 218, 0, 84);
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame.TextLabel
+LMG2L["TextLabel_3"] = Instance.new("TextLabel", LMG2L["Frame_2"]);
+LMG2L["TextLabel_3"]["BorderSizePixel"] = 0;
+LMG2L["TextLabel_3"]["BackgroundColor3"] = Color3.fromRGB(47, 255, 68);
+LMG2L["TextLabel_3"]["TextColor3"] = Color3.fromRGB(54, 0, 0);
+LMG2L["TextLabel_3"]["Size"] = UDim2.new(0.69811, 0, 0.76712, 0);
+LMG2L["TextLabel_3"]["BorderColor3"] = Color3.fromRGB(51, 54, 15);
+LMG2L["TextLabel_3"]["Position"] = UDim2.new(0, 36, 0, -2);
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame.TextLabel.Clear
+LMG2L["Clear_4"] = Instance.new("TextButton", LMG2L["TextLabel_3"]);
+LMG2L["Clear_4"]["BorderSizePixel"] = 0;
+LMG2L["Clear_4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+LMG2L["Clear_4"]["Size"] = UDim2.new(0.38514, 0, 0.30357, 0);
+LMG2L["Clear_4"]["Text"] = [[Clear]];
+LMG2L["Clear_4"]["Name"] = [[Clear]];
+LMG2L["Clear_4"]["Position"] = UDim2.new(0, 174, 0, 112);
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame.TextLabel.Clear.Exec ss
+LMG2L["Exec ss_5"] = Instance.new("TextButton", LMG2L["Clear_4"]);
+LMG2L["Exec ss_5"]["BorderSizePixel"] = 0;
+LMG2L["Exec ss_5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+LMG2L["Exec ss_5"]["Size"] = UDim2.new(1, 0, 1, 0);
+LMG2L["Exec ss_5"]["Text"] = [[Exec ss]];
+LMG2L["Exec ss_5"]["Name"] = [[Exec ss]];
+LMG2L["Exec ss_5"]["Position"] = UDim2.new(0, -166, 0, 0);
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame.ss Sadsonlkidd
+LMG2L["ss Sadsonlkidd_6"] = Instance.new("TextButton", LMG2L["Frame_2"]);
+LMG2L["ss Sadsonlkidd_6"]["BorderSizePixel"] = 0;
+LMG2L["ss Sadsonlkidd_6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+LMG2L["ss Sadsonlkidd_6"]["Size"] = UDim2.new(1.00943, 0, 0.09589, 0);
+LMG2L["ss Sadsonlkidd_6"]["Text"] = [[Exec ss Sadsonkidd]];
+LMG2L["ss Sadsonlkidd_6"]["Name"] = [[ss Sadsonlkidd]];
+LMG2L["ss Sadsonlkidd_6"]["Position"] = UDim2.new(0, -2, 0, -10);
+
+
+-- Players.baldi_basics9911.PlayerGui.ScreenGui.Frame.UIAspectRatioConstraint
+LMG2L["UIAspectRatioConstraint_7"] = Instance.new("UIAspectRatioConstraint", LMG2L["Frame_2"]);
+LMG2L["UIAspectRatioConstraint_7"]["AspectRatio"] = 2.90411;
+
+
+
+return LMG2L["ScreenGui_1"], require;
